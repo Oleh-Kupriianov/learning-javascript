@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let number;
+
+      //   function isEven(number) {
+      //     return number % 2 === 0; //? true : false;
+      //   }
+
+      //   function getNumberType(number) {
+      //     if (number > 0) {
+      //       return 'positive';
+      //     } else if (number < 0) {
+      //       return 'negative';
+      //     } else {
+      //       return 'zero';
+      //     }
+      //   }
+
+      //   function getMax(a, b) {
+      //     return a > b ? a : b;
+      //   }
+
+      //   function showEvenNumbers() {
+      //     for (let i = 1; i <= 20; i++) {
+      //       if (i % 2 === 0) {
+      //         alert(i);
+      //       }
+      //     }
+      //   }
+
+      //   let day;
+      //   function getDayName(day) {
+      //     switch (day) {
+      //       case 1:
+      //         return 'Monday';
+
+      //       case 2:
+      //         return 'Tuesday';
+
+      //       case 3:
+      //         return 'Wednesday';
+
+      //       case 4:
+      //         return 'Thursday';
+
+      //       case 5:
+      //         return 'Friday';
+
+      //       default:
+      //         return 'Unknown day';
+      //     }
+      //   }
+
+      //----------Function expressions-----------
+      //   function sayHi() { // create
+      //     alert('Hello');
+      //   }
+
+      //   let sayHi = function () { // create
+      //     alert('Hello');
+      //   };
+
+      //   let func = sayHi; //copy
+
+      //   func(); // Hello
+      //   sayHi(); // Hello
+
+      //----------Callback functions-----------
+      //   function ask(question, yes, no) {
+      //     if (confirm(question)) yes();
+      //     else no();
+      //   }
+
+      //   function showOk() {
+      //     alert('You agreed.');
+      //   }
+
+      //   function showCancel() {
+      //     alert('You canceled the execution.');
+      //   }
+
+      //   // usage: functions showOk, showCancel are passed as arguments to ask
+      //   ask('Do you agree?', showOk, showCancel);
+
+      //   ask(
+      //     'Do you agree?',
+      //     function showOk() {
+      //       alert('You agreed.');
+      //     },
+      //     function showCancel() {
+      //       alert('You canceled the execution.');
+      //     },
+      //   );
+
+      //   // Function Declaration
+      //   function sum(a, b) {
+      //     return a + b;
+      //   }
+
+      //   // Function Expression
+      //   let sum = function (a, b) {
+      //     return a + b;
+      //   };
+
+      //   sayHi('John'); // Hello, John
+
+      //   function sayHi(name) {
+      //     alert(`Hello, ${name}`);
+      //   }
+
+      //   sayHi('John'); // error!
+
+      //   let sayHi = function (name) {
+      //     // (*) no magic any more
+      //     alert(`Hello, ${name}`);
+      //   };
+
+      //   let age = prompt('What is your age?', 18);
+
+      //   // conditionally declare a function
+      //   if (age < 18) {
+      //     function welcome() {
+      //       alert('Hello!');
+      //     }
+      //   } else {
+      //     function welcome() {
+      //       alert('Greetings!');
+      //     }
+      //   }
+
+      //   // ...use it later
+      //   welcome(); // Error: welcome is not defined
+
+      //   let age = 16; // take 16 as an example
+
+      //   if (age < 18) {
+      //     welcome(); // \   (runs)
+      //     //  |
+      //     function welcome() {
+      //       //  |
+      //       alert('Hello!'); //  |  Function Declaration is available
+      //     } //  |  everywhere in the block where it's declared
+      //     //  |
+      //     welcome(); // /   (runs)
+      //   } else {
+      //     function welcome() {
+      //       alert('Greetings!');
+      //     }
+      //   }
+
+      //   // Here we're out of curly braces,
+      //   // so we can not see Function Declarations made inside of them.
+
+      //   welcome(); // Error: welcome is not defined
+
+      //   let age = prompt('What is your age?', 18);
+
+      //   let welcome;
+
+      //   if (age < 18) {
+      //     welcome = function () {
+      //       alert('Hello!');
+      //     };
+      //   } else {
+      //     welcome = function () {
+      //       alert('Greetings!');
+      //     };
+      //   }
+
+      //   welcome(); // ok now
+
+      //   let age = prompt('What is your age?', 18);
+
+      //   let welcome =
+      //     age < 18
+      //       ? function () {
+      //           alert('Hello!');
+      //         }
+      //       : function () {
+      //           alert('Greetings!');
+      //         };
+
+      //   welcome(); // ok now
+
+      //   function showMessage() {
+      //     alert('Hello');
+      //   }
+
+      //   let showMessage = function () {
+      //     alert('Hello');
+      //   };
+
+      //   let sum = function (a, b) {
+      //     return a + b;
+      //   };
+
+      //   let isEven = function (number) {
+      //     return number % 2 === 0;
+      //   };
+
+      //   let isPositive = function (number) {
+      //     return number > 0;
+      //   };
+
+      //   let getMax = function (a, b) {
+      //     return a > b ? a : b;
+      //   };
+
+      //   let getMin = function (a, b) {
+      //     return a < b ? a : b;
+      //   };
+
+      //   let getSign = function (number) {
+      //     if (number > 0) {
+      //       return 'positive';
+      //     } else if (number < 0) {
+      //       return 'negative';
+      //     } else {
+      //       return 'zero';
+      //     }
+      //   };
+
+      //   let getGreeting = function (name, hour) {
+      //     if (hour < 12) {
+      //       return `Good morning, ${name}!`;
+      //     } else if (hour < 18) {
+      //       return `Good afternoon, ${name}!`;
+      //     } else {
+      //       return `Good evening, ${name}!`;
+      //     }
+      //   };
+
+      //   alert(getGreeting('John', 10));
+      //   alert(getGreeting('Anna', 15));
+      //   alert(getGreeting('Mike', 20));
+
+      //   let getDiscount = function (price) {
+      //     if (price >= 100) {
+      //       return 20;
+      //     } else if (price >= 50) {
+      //       return 10;
+      //     } else {
+      //       return 0;
+      //     }
+      //   };
+
+      let getTemperatureMessage = function (temp) {
+        if (temp < 0) {
+          return 'freezing';
+        } else if (temp < 15) {
+          return 'cold';
+        } else if (temp < 25) {
+          return 'comfortable';
+        } else {
+          return 'hot';
+        }
+      };
+    </script>
+  </body>
+</html>
