@@ -344,13 +344,39 @@
 
       //   let getMax = (a, b) => (a > b ? a : b);
 
-      let getSign = (number) => {
-        if (number > 0) {
-          return 'positive';
-        } else if (number < 0) {
-          return 'negative';
+      // let getSign = (number) => {
+      //   if (number > 0) {
+      //     return 'positive';
+      //   } else if (number < 0) {
+      //     return 'negative';
+      //   } else {
+      //     return 'zero';
+      //   }
+      // };
+
+      // let getMin = (a, b) => (a < b ? a : b);
+
+      // let getSquare = (number) => number * number;
+
+      // let isPositive = (number) => number > 0;
+
+      // let canDrive = (age, hasLicense) => age >= 18 && hasLicense;
+
+      // let isWeekend = (day) => day === 'Saturday' || day === 'Sunday';
+
+      let isWorkingDay = (day) => day !== 'Saturday' && day !== 'Sunday';
+
+      alert(isWorkingDay('Monday')); // true
+      alert(isWorkingDay('Saturday')); // false
+      alert(isWorkingDay('Sunday')); // false
+
+      let getDiscount = (price) => {
+        if (price >= 100) {
+          return 20;
+        } else if (price >= 50) {
+          return 10;
         } else {
-          return 'zero';
+          return 0;
         }
       };
     </script>
