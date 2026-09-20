@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(1);
+
+      //   for (let i = 0; i <= 10; i += 1) {
+      //     console.log(i);
+      //   };
+
+      //   1. todo vars
+      // const minSalary = 500;
+      // const maxSalary = 5000;
+      // const employees = 12;
+      // let totalSalary = 0;
+
+      // for (let i = 1; i < employees; i += 1) {
+      //   const salary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
+      //   console.log(`${salary}`);
+
+      //   totalSalary += salary;
+      // }
+      // console.log('totalSalary ', totalSalary);
+
+      const min = 0;
+      const max = 5;
+      let total = 0;
+
+      // my 1st code-----------------------------------------
+      // for (let i = min; i <= max; i += 1) {
+      //   i % 2 === true;
+      //   total += i;
+      // }
+      // console.log(total);
+
+      // correct code------------------------------------------
+      // for (let i = min; i <= max; i += 1) {
+      //   //i += 2 break down
+
+      //   console.log(i);
+
+      //   if (i % 2 === 0) {
+      //     console.log('even ', i);
+
+      //     total += i;
+      //   }
+      // }
+      // console.log('total ', total);
+
+      // ungraited code------------------------------------------
+      for (let i = min; i <= max; i += 1) {
+        if (i % 2 !== 0) {
+          console.log('odd ', i);
+          continue;
+        }
+        console.log('even ', i);
+        total += i;
+      }
+      console.log('total ', total);
+    </script>
+  </body>
+</html>
