@@ -6,7 +6,37 @@
     <title>Document</title>
   </head>
   <body>
+     <label>
+      Number
+      <input type='number' data-value
+    </label>
+    <button type="button" data-add>Add</button>
+    <button type="button" data-reset>Reset</button>
+    <p class="js-output">Sum: <span>0</span></p>
+    
     <script>
+
+      const btnAdd = document.querySelector('button[data-add]');
+      const resetBtn = document.querySelector('button[data-reset]');
+      const valueInput = document.querySelector('input[data-value]'); // console.log(btnAdd.textContent)
+      const outputEl = document.querySelector('.js-output span');
+
+let total = 0;
+
+btnAdd.addEventListener('click', function () {
+  console.log('Hello');
+  const value = Number(valueInput.value);
+  console.log(value);
+  total += value;
+  // console.log('total: ', total);
+  outputEl.textContent = total
+valueInput.value = '';
+})
+
+resetBtn.addEventListener('click', function () {
+total = 0;
+  outputEl.textContent = total;
+})
       //   console.log(1);
 
       //   for (let i = 0; i <= 10; i += 1) {
@@ -27,9 +57,9 @@
       // }
       // console.log('totalSalary ', totalSalary);
 
-      const min = 0;
-      const max = 5;
-      let total = 0;
+      // const min = 0;
+      // const max = 5;
+      // let total = 0;
 
       // my 1st code-----------------------------------------
       // for (let i = min; i <= max; i += 1) {
@@ -53,15 +83,57 @@
       // console.log('total ', total);
 
       // ungraited code------------------------------------------
-      for (let i = min; i <= max; i += 1) {
-        if (i % 2 !== 0) {
-          console.log('odd ', i);
-          continue;
-        }
-        console.log('even ', i);
-        total += i;
-      }
-      console.log('total ', total);
+      // for (let i = min; i <= max; i += 1) {
+      //   if (i % 2 !== 0) {
+      //     console.log('odd ', i);
+      //     continue;
+      //   }
+      //   console.log('even ', i);
+      //   total += i;
+      // }
+      // console.log('total ', total);
+
+      // let balance = 10000;
+      // const payment = 2000;
+
+      // if (payment <= balance) {
+      //   console.log('ok');
+
+      //   balance -= payment;
+
+      //   console.log(`On account ${balance}`);
+      // }
+
+      // let totalSpent = 2000;
+      // let payment = 500;
+      // let discount = 0;
+
+      // if (totalSpent >= 100 && totalSpent < 1000) {
+      //   discount = 0.02;
+      //   console.log(`Bronze partner, ${discount * 100}%`);
+      // } else if (totalSpent >= 1000 && totalSpent < 5000) {
+      //   discount = 0.05;
+      //   console.log(`Silver partner, ${discount * 100}%`);
+      // } else if (totalSpent >= 5000) {
+      //   discount = 0.1;
+      //   console.log(`Gold partner, ${discount * 100}%`);
+      // } else {
+      //   console.log(`Does not partner`);
+      // }
+
+      // payment = payment - payment * discount;
+
+      // console.log(`order, total ${payment} with discount ${discount * 100}%`);
+
+      // totalSpent += payment;
+
+      // console.log(`total ${totalSpent}`);
+
+
+
+
     </script>
+
+   
   </body>
 </html>
